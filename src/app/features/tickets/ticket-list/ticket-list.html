@@ -1,0 +1,83 @@
+<section class="page">
+  <header class="page-header">
+    <h1>Murojaatlar</h1>
+    @if (!loading()) {
+      <span class="count">{{ tickets().length }} ta</span>
+    }
+  </header>
+
+  <div class="card">
+    <div class="progress">
+      @if (loading()) {
+        <p-progressbar mode="indeterminate" />
+      }
+    </div>
+
+    <p-table
+      [value]="tickets()"
+      [tableStyle]="{ 'min-width': '960px' }"
+      dataKey="id"
+      [rowHover]="true"
+      [scrollable]="true"
+    >
+      <ng-template #header>
+        <tr>
+          <th class="id-cell">#</th>
+          <th>Sarlavha</th>
+          <th>Holat</th>
+          <th>Ustuvorlik</th>
+          <th>Kategoriya</th>
+          <th>Masʼul</th>
+          <th>Yaratilgan</th>
+          <th>Yangilangan</th>
+          <th class="actions-cell"><span class="sr-only">Amallar</span></th>
+        </tr>
+      </ng-template>
+
+      <ng-template #body let-ticket>
+        <tr>
+          <td class="id-cell">{{ ticket.id }}</td>
+          <td class="title-cell">
+            <span class="title" [pTooltip]="ticket.title" tooltipPosition="top">
+              {{ ticket.title }}
+            </span>
+          </td>
+          <td><app-status-badge [status]="ticket.status" /></td>
+          <td><app-priority-badge [priority]="ticket.priority" /></td>
+          <td>{{ ticket.category }}</td>
+          <td>
+            @if (ticket.assigneeId === null) {
+              <span class="unassigned">Biriktirilmagan</span>
+            } @else {
+              {{ assigneeName(ticket.assigneeId) }}
+            }
+          </td>
+          <td class="date-cell">{{ formatCreatedAt(ticket) }}</td>
+          <td class="date-cell">{{ formatUpdatedAt(ticket) }}</td>
+          <td class="actions-cell">
+            <p-button
+              icon="pi pi-trash"
+              severity="danger"
+              size="small"
+              [text]="true"
+              [rounded]="true"
+              ariaLabel="Oʻchirish"
+              (onClick)="confirmDelete(ticket)"
+            />
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template #emptymessage>
+        @if (!loading()) {
+          <tr>
+            <td class="empty" colspan="9">
+              <i class="pi pi-inbox" aria-hidden="true"></i>
+              <span>Hozircha murojaatlar yoʻq</span>
+            </td>
+          </tr>
+        }
+      </ng-template>
+    </p-table>
+  </div>
+</section>

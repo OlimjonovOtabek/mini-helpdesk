@@ -1,0 +1,11 @@
+<p class="message">{{ data?.message }}</p>
+
+<div class="actions">
+  <p-button
+    [label]="data?.cancelLabel"
+    severity="secondary"
+    [text]="true"
+    (onClick)="close(false)"
+  />
+  <p-button [label]="data?.confirmLabel" severity="danger" (onClick)="close(true)" />
+</div>

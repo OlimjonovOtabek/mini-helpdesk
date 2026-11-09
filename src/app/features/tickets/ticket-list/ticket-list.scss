@@ -1,0 +1,101 @@
+.page-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.count {
+  font-size: 16px;
+  color: var(--app-text-muted);
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  background: var(--app-surface);
+}
+
+.progress {
+  height: 4px;
+
+  p-progressbar {
+    height: 4px;
+    border-radius: 0;
+  }
+}
+
+p-table {
+  display: block;
+
+  th,
+  td {
+    padding: 12px 8px;
+    white-space: nowrap;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 16px;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 16px;
+  }
+
+  th {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--app-text-muted);
+  }
+}
+
+.id-cell {
+  width: 48px;
+  color: var(--app-text-muted);
+}
+
+.title-cell {
+  width: 100%;
+  max-width: 0;
+}
+
+.title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.unassigned {
+  color: var(--app-text-muted);
+}
+
+.date-cell {
+  font-variant-numeric: tabular-nums;
+}
+
+.actions-cell {
+  width: 56px;
+  text-align: right;
+}
+
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--app-text-muted);
+
+  .pi {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 32px;
+  }
+}
