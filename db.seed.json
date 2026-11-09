@@ -1,0 +1,503 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aziz Karimov",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Sardor Rahimov",
+      "role": "technician"
+    },
+    {
+      "id": 3,
+      "name": "Dilnoza Yusupova",
+      "role": "technician"
+    },
+    {
+      "id": 4,
+      "name": "Malika Tosheva",
+      "role": "requester"
+    },
+    {
+      "id": 5,
+      "name": "Jasur Ergashev",
+      "role": "requester"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Kompyuter"
+    },
+    {
+      "id": 2,
+      "name": "Printer"
+    },
+    {
+      "id": 3,
+      "name": "Tarmoq va internet"
+    },
+    {
+      "id": 4,
+      "name": "Dasturiy taʼminot"
+    },
+    {
+      "id": 5,
+      "name": "Kirish huquqi"
+    },
+    {
+      "id": 6,
+      "name": "Boshqa"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "title": "2-qavatdagi printer qogʻoz tiqyapti",
+      "description": "Har 5-6 varaqdan keyin qogʻoz ichkarida tiqilib qoladi. Lotokni tozalab koʻrdik, foyda bermadi.",
+      "status": "closed",
+      "priority": "medium",
+      "category": "Printer",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-01T06:12:00Z",
+      "updatedAt": "2026-10-02T12:12:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Monitor vaqti-vaqti bilan oʻchib-yonyapti",
+      "description": "Ish paytida monitor bir necha soniyaga qorayib qoladi. Kabelni qayta ulab koʻrdim, oʻzgarish yoʻq.",
+      "status": "closed",
+      "priority": "low",
+      "category": "Kompyuter",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-02T09:40:00Z",
+      "updatedAt": "2026-10-04T13:40:00Z"
+    },
+    {
+      "id": 3,
+      "title": "3-qavatda Wi-Fi yoʻq",
+      "description": "Ertalabdan beri 3-qavatda Wi-Fi tarmogʻi koʻrinmayapti. Butun boʻlim internetsiz qoldi.",
+      "status": "closed",
+      "priority": "high",
+      "category": "Tarmoq va internet",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-03T04:55:00Z",
+      "updatedAt": "2026-10-03T11:55:00Z"
+    },
+    {
+      "id": 4,
+      "title": "1C dasturiga kira olmayapman",
+      "description": "Login va parolni kiritganimda «Foydalanuvchi topilmadi» degan xato chiqadi. Kecha hammasi ishlayotgan edi.",
+      "status": "resolved",
+      "priority": "medium",
+      "category": "Dasturiy taʼminot",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-06T11:20:00Z",
+      "updatedAt": "2026-10-07T13:20:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Buxgalteriya umumiy papkasiga ruxsat kerak",
+      "description": "Yangi lavozimga oʻtdim, endi buxgalteriya hisobotlari turgan umumiy papkaga kirish huquqi kerak.",
+      "status": "closed",
+      "priority": "medium",
+      "category": "Kirish huquqi",
+      "requesterId": 5,
+      "assigneeId": 2,
+      "createdAt": "2026-10-07T07:05:00Z",
+      "updatedAt": "2026-10-09T08:05:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Majlislar xonasidagi proyektor pulti ishlamayapti",
+      "description": "Pultdagi tugmalar bosilmayapti, batareyasini almashtirib koʻrdik. Ertaga muhim uchrashuv bor.",
+      "status": "resolved",
+      "priority": "low",
+      "category": "Boshqa",
+      "requesterId": 4,
+      "assigneeId": 3,
+      "createdAt": "2026-10-08T13:30:00Z",
+      "updatedAt": "2026-10-09T09:30:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Butun ofisda internet uzildi",
+      "description": "Soat 10:00 dan beri hech bir kompyuterda internet yoʻq. Mijozlar bilan aloqa toʻxtab qoldi.",
+      "status": "closed",
+      "priority": "urgent",
+      "category": "Tarmoq va internet",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-09T05:15:00Z",
+      "updatedAt": "2026-10-09T08:15:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Noutbuk zaryad olmayapti",
+      "description": "Quvvat bloki ulangan boʻlsa ham batareya foizi oshmayapti. Hozir 15% qoldi.",
+      "status": "resolved",
+      "priority": "high",
+      "category": "Kompyuter",
+      "requesterId": 5,
+      "assigneeId": 2,
+      "createdAt": "2026-10-10T10:48:00Z",
+      "updatedAt": "2026-10-11T14:48:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Rangli printerda koʻk rang chiqmayapti",
+      "description": "Chop etilgan hujjatlarda koʻk rang umuman koʻrinmaydi. Kartrijni almashtirish kerak boʻlsa kerak.",
+      "status": "closed",
+      "priority": "low",
+      "category": "Printer",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-13T06:02:00Z",
+      "updatedAt": "2026-10-16T08:02:00Z"
+    },
+    {
+      "id": 10,
+      "title": "Outlook xatlarni yubormayapti",
+      "description": "Yuborilgan xatlar «Chiquvchi» papkasida qolib ketyapti. Xat qabul qilish esa normal ishlayapti.",
+      "status": "resolved",
+      "priority": "medium",
+      "category": "Dasturiy taʼminot",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-14T08:37:00Z",
+      "updatedAt": "2026-10-15T06:37:00Z"
+    },
+    {
+      "id": 11,
+      "title": "Kompyuter juda sekin ishlayapti",
+      "description": "Yoqilishiga 10 daqiqa ketadi, brauzer va Excel tez-tez qotib qoladi.",
+      "status": "in_progress",
+      "priority": "medium",
+      "category": "Kompyuter",
+      "requesterId": 4,
+      "assigneeId": 3,
+      "createdAt": "2026-10-15T12:10:00Z",
+      "updatedAt": "2026-10-17T11:10:00Z"
+    },
+    {
+      "id": 12,
+      "title": "Elektron hujjat aylanishi tizimida parol muddati tugadi",
+      "description": "Tizim parolni almashtirishni soʻrayapti, lekin yangi parolni qabul qilmayapti. Bugun imzolanishi kerak boʻlgan hujjatlar bor.",
+      "status": "resolved",
+      "priority": "high",
+      "category": "Kirish huquqi",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-16T04:25:00Z",
+      "updatedAt": "2026-10-16T09:25:00Z"
+    },
+    {
+      "id": 13,
+      "title": "Yangi xodim uchun ish joyini tayyorlash",
+      "description": "Dushanba kuni marketing boʻlimiga yangi xodim keladi. Unga kompyuter, telefon va pochta qutisi kerak.",
+      "status": "in_progress",
+      "priority": "low",
+      "category": "Boshqa",
+      "requesterId": 5,
+      "assigneeId": 2,
+      "createdAt": "2026-10-17T09:58:00Z",
+      "updatedAt": "2026-10-18T11:58:00Z"
+    },
+    {
+      "id": 14,
+      "title": "VPN orqali uydan ulanib boʻlmayapti",
+      "description": "VPN ilovasi «Ulanish vaqti tugadi» xatosini beryapti. Ofisda hammasi ishlaydi.",
+      "status": "resolved",
+      "priority": "medium",
+      "category": "Tarmoq va internet",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-20T05:44:00Z",
+      "updatedAt": "2026-10-21T12:44:00Z"
+    },
+    {
+      "id": 15,
+      "title": "Antivirus litsenziyasi muddati tugaganini koʻrsatyapti",
+      "description": "Antivirus har yarim soatda ogohlantirish chiqaryapti va bazalarni yangilamayapti.",
+      "status": "in_progress",
+      "priority": "high",
+      "category": "Dasturiy taʼminot",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-21T11:03:00Z",
+      "updatedAt": "2026-10-22T08:03:00Z"
+    },
+    {
+      "id": 16,
+      "title": "Skaner hujjatlarni pochtaga yubormayapti",
+      "description": "Koʻp funksiyali qurilmada skanerlash ishlaydi, lekin «Pochtaga yuborish» tugmasi xato beradi.",
+      "status": "resolved",
+      "priority": "low",
+      "category": "Printer",
+      "requesterId": 4,
+      "assigneeId": 3,
+      "createdAt": "2026-10-22T07:19:00Z",
+      "updatedAt": "2026-10-24T09:19:00Z"
+    },
+    {
+      "id": 17,
+      "title": "Klaviaturadagi bir nechta tugma ishlamayapti",
+      "description": "Ustiga choy toʻkilgandan keyin «E» va «R» tugmalari bosilmayapti. Iloji boʻlsa, almashtirib bering.",
+      "status": "in_progress",
+      "priority": "medium",
+      "category": "Kompyuter",
+      "requesterId": 5,
+      "assigneeId": 2,
+      "createdAt": "2026-10-23T13:47:00Z",
+      "updatedAt": "2026-10-24T07:47:00Z"
+    },
+    {
+      "id": 18,
+      "title": "Kassa boʻlimida server bilan aloqa yoʻq",
+      "description": "Kassadagi ikkala kompyuter serverni koʻrmayapti, toʻlovlarni kiritib boʻlmayapti. Mijozlar navbatda kutib turibdi.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "category": "Tarmoq va internet",
+      "requesterId": 4,
+      "assigneeId": 3,
+      "createdAt": "2026-10-24T06:31:00Z",
+      "updatedAt": "2026-10-24T08:31:00Z"
+    },
+    {
+      "id": 19,
+      "title": "CRM tizimida hisobotlar boʻlimi ochilmayapti",
+      "description": "Menejer rolidagi foydalanuvchilarga hisobotlar menyusi koʻrinmayapti. Oy yakuni uchun hisobot kerak.",
+      "status": "in_progress",
+      "priority": "medium",
+      "category": "Kirish huquqi",
+      "requesterId": 4,
+      "assigneeId": 2,
+      "createdAt": "2026-10-27T08:12:00Z",
+      "updatedAt": "2026-10-28T08:12:00Z"
+    },
+    {
+      "id": 20,
+      "title": "Windows yangilanishidan keyin buxgalteriya dasturi ishga tushmayapti va xato oynasi chiqyapti",
+      "description": "Kechagi yangilanishdan keyin dastur ochilayotganda «Kutubxona topilmadi» xatosi chiqadi. Choraklik hisobot topshirish muddati yaqin.",
+      "status": "in_progress",
+      "priority": "high",
+      "category": "Dasturiy taʼminot",
+      "requesterId": 5,
+      "assigneeId": 3,
+      "createdAt": "2026-10-28T10:26:00Z",
+      "updatedAt": "2026-10-29T13:26:00Z"
+    },
+    {
+      "id": 21,
+      "title": "Printer «Oflayn» holatida turibdi",
+      "description": "Kompyuterdan yuborilgan hujjatlar chop etish navbatida qolib ketyapti. Printerning oʻzida xato koʻrsatilmayapti.",
+      "status": "new",
+      "priority": "medium",
+      "category": "Printer",
+      "requesterId": 4,
+      "assigneeId": null,
+      "createdAt": "2026-10-29T05:50:00Z",
+      "updatedAt": "2026-10-29T05:50:00Z"
+    },
+    {
+      "id": 22,
+      "title": "Majlislar xonasida internet juda sekin",
+      "description": "Videoqoʻngʻiroqlar paytida tasvir va ovoz uzilib qolyapti.",
+      "status": "in_progress",
+      "priority": "medium",
+      "category": "Tarmoq va internet",
+      "requesterId": 5,
+      "assigneeId": 2,
+      "createdAt": "2026-10-30T12:35:00Z",
+      "updatedAt": "2026-11-02T10:35:00Z"
+    },
+    {
+      "id": 23,
+      "title": "Ikkinchi monitor ulash kerak",
+      "description": "Ish uchun qoʻshimcha monitor ajratilgan. Uni ulab, sozlab berishingizni soʻrayman.",
+      "status": "new",
+      "priority": "low",
+      "category": "Kompyuter",
+      "requesterId": 5,
+      "assigneeId": null,
+      "createdAt": "2026-11-02T06:40:00Z",
+      "updatedAt": "2026-11-02T06:40:00Z"
+    },
+    {
+      "id": 24,
+      "title": "Sobiq xodimning pochtasiga kirish kerak",
+      "description": "Ishdan ketgan hamkasbimiz pochtasida mijozlar bilan yozishmalar qolgan. Ularni menga oʻtkazib berish kerak.",
+      "status": "in_progress",
+      "priority": "high",
+      "category": "Kirish huquqi",
+      "requesterId": 4,
+      "assigneeId": 3,
+      "createdAt": "2026-11-03T09:14:00Z",
+      "updatedAt": "2026-11-04T10:14:00Z"
+    },
+    {
+      "id": 25,
+      "title": "Ofis telefonida ichki raqamlar ishlamayapti",
+      "description": "Shahar raqamlariga qoʻngʻiroq qilsa boʻladi, lekin ichki raqamlarga ulanmayapti.",
+      "status": "new",
+      "priority": "medium",
+      "category": "Boshqa",
+      "requesterId": 4,
+      "assigneeId": null,
+      "createdAt": "2026-11-04T04:58:00Z",
+      "updatedAt": "2026-11-04T04:58:00Z"
+    },
+    {
+      "id": 26,
+      "title": "Excel fayllarni ochganda qotib qolyapti",
+      "description": "Hajmi katta boʻlmagan fayllarda ham Excel «Javob bermayapti» holatiga tushadi. Kompyuterni qayta yoqish ham yordam bermadi.",
+      "status": "new",
+      "priority": "high",
+      "category": "Dasturiy taʼminot",
+      "requesterId": 5,
+      "assigneeId": null,
+      "createdAt": "2026-11-05T11:42:00Z",
+      "updatedAt": "2026-11-05T11:42:00Z"
+    },
+    {
+      "id": 27,
+      "title": "Omborxonada Wi-Fi signali juda past",
+      "description": "Omborxonaning orqa qismida planshetlar tarmoqqa ulanmaydi. Qoʻshimcha kirish nuqtasi kerak boʻlishi mumkin.",
+      "status": "new",
+      "priority": "medium",
+      "category": "Tarmoq va internet",
+      "requesterId": 4,
+      "assigneeId": null,
+      "createdAt": "2026-11-06T07:27:00Z",
+      "updatedAt": "2026-11-06T07:27:00Z"
+    },
+    {
+      "id": 28,
+      "title": "Direktor kompyuteri yoqilmayapti",
+      "description": "Quvvat tugmasi bosilganda hech narsa boʻlmayapti, chiroqlar ham yonmaydi. Soat 14:00 da taqdimot bor.",
+      "status": "new",
+      "priority": "urgent",
+      "category": "Kompyuter",
+      "requesterId": 5,
+      "assigneeId": null,
+      "createdAt": "2026-11-06T13:05:00Z",
+      "updatedAt": "2026-11-06T13:05:00Z"
+    },
+    {
+      "id": 29,
+      "title": "Printer uchun A3 qogʻoz kerak",
+      "description": "Chizmalarni chop etish uchun A3 formatdagi qogʻoz tugab qoldi.",
+      "status": "new",
+      "priority": "low",
+      "category": "Printer",
+      "requesterId": 4,
+      "assigneeId": null,
+      "createdAt": "2026-11-07T08:50:00Z",
+      "updatedAt": "2026-11-07T08:50:00Z"
+    },
+    {
+      "id": 30,
+      "title": "Bank-klient tizimiga kirishda ERI kaliti topilmayapti",
+      "description": "Toʻlov yuborishda «ERI kaliti topilmadi» xatosi chiqyapti. Kalit fleshkada turibdi va boshqa kompyuterda ishlaydi.",
+      "status": "new",
+      "priority": "high",
+      "category": "Kirish huquqi",
+      "requesterId": 5,
+      "assigneeId": null,
+      "createdAt": "2026-11-08T10:15:00Z",
+      "updatedAt": "2026-11-08T10:15:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "ticketId": 1,
+      "authorId": 2,
+      "text": "Rolikni tozaladim, endi qogʻoz tiqilmasligi kerak. Yana takrorlansa, shu yerga yozing.",
+      "createdAt": "2026-10-02T08:12:00Z"
+    },
+    {
+      "id": 2,
+      "ticketId": 3,
+      "authorId": 4,
+      "text": "Hozir ham ulanib boʻlmayapti, iltimos, tezroq qarab bering.",
+      "createdAt": "2026-10-03T06:55:00Z"
+    },
+    {
+      "id": 3,
+      "ticketId": 3,
+      "authorId": 2,
+      "text": "Kirish nuqtasi qayta ishga tushirildi, tarmoq tiklandi.",
+      "createdAt": "2026-10-03T10:55:00Z"
+    },
+    {
+      "id": 4,
+      "ticketId": 7,
+      "authorId": 2,
+      "text": "Provayder bilan bogʻlandik, magistral liniyada uzilish boʻlgan ekan.",
+      "createdAt": "2026-10-09T07:15:00Z"
+    },
+    {
+      "id": 5,
+      "ticketId": 8,
+      "authorId": 2,
+      "text": "Quvvat bloki nosoz ekan, yangisiga almashtirdik.",
+      "createdAt": "2026-10-11T13:48:00Z"
+    },
+    {
+      "id": 6,
+      "ticketId": 11,
+      "authorId": 3,
+      "text": "Diskda joy qolmagan, keraksiz fayllarni tozalayapman.",
+      "createdAt": "2026-10-16T08:10:00Z"
+    },
+    {
+      "id": 7,
+      "ticketId": 11,
+      "authorId": 4,
+      "text": "Rahmat, biroz tezlashdi, lekin brauzer hali ham qotib qolyapti.",
+      "createdAt": "2026-10-17T09:10:00Z"
+    },
+    {
+      "id": 8,
+      "ticketId": 12,
+      "authorId": 3,
+      "text": "Parol siyosati yangilangan edi, hisobingizni qayta tikladim.",
+      "createdAt": "2026-10-16T08:25:00Z"
+    },
+    {
+      "id": 9,
+      "ticketId": 15,
+      "authorId": 3,
+      "text": "Yangi litsenziya kaliti buyurtma qilindi, ertaga oʻrnatamiz.",
+      "createdAt": "2026-10-22T07:03:00Z"
+    },
+    {
+      "id": 10,
+      "ticketId": 18,
+      "authorId": 3,
+      "text": "Kommutator portida muammo bor, hozir almashtiryapmiz.",
+      "createdAt": "2026-10-24T07:31:00Z"
+    },
+    {
+      "id": 11,
+      "ticketId": 20,
+      "authorId": 5,
+      "text": "Dasturni qayta oʻrnatish ham yordam bermadi.",
+      "createdAt": "2026-10-29T12:26:00Z"
+    },
+    {
+      "id": 12,
+      "ticketId": 24,
+      "authorId": 3,
+      "text": "Rahbariyatdan ruxsat soʻradim, tasdiqlansa oʻtkazib beraman.",
+      "createdAt": "2026-11-04T09:14:00Z"
+    }
+  ]
+}
