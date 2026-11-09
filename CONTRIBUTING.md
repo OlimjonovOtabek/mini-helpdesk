@@ -8,7 +8,7 @@ Quyidagi qoidalar hamma ticketlar uchun amal qiladi.
 - Har bir ish GitHub Issue orqali beriladi va Pull Request (PR) orqali qabul qilinadi.
 - `main` branchga toʻgʻridan-toʻgʻri push qilinmaydi.
 - Bitta PR = bitta ticket. PR tavsifida `Closes #N` yoziladi (N - issue raqami).
-- Ticketni boshlashdan oldin issue'ga 2-3 qatorda uni qanday qilmoqchi ekaningni yozasan.
+- Ticketni boshlashdan oldin issue'ga 2-3 qatorda uni qanday qilmoqchi ekaningizni yozasiz.
 
 ## Branch nomi
 
@@ -41,19 +41,19 @@ npm test
 npm run build
 ```
 
-Bundan tashqari, oʻzgarishni brauzerda oʻzing tekshirib koʻrgan boʻlishing kerak.
+Bundan tashqari, oʻzgarishni brauzerda oʻzingiz tekshirib koʻrgan boʻlishingiz kerak.
 CI ham shu tekshiruvlarni bajaradi, CI qizil boʻlsa PR qabul qilinmaydi.
 
 ## AI vositalari
 
 AI vositalaridan foydalanish mumkin.
-Lekin PR'dagi har bir qatorni ogʻzaki tushuntirib bera olishing shart.
+Lekin PR'dagi har bir qatorni ogʻzaki tushuntirib bera olishingiz shart.
 
-## Qotib qolsang
+## Qotib qolsangiz
 
-30 daqiqadan koʻp qotib qolsang, savol ber.
-Savolda uchta narsani yoz:
+30 daqiqadan koʻp qotib qolsangiz, savol bering.
+Savolda uchta narsani yozing:
 
-1. Nima qilmoqchi eding.
-2. Nimani sinab koʻrding.
+1. Nima qilmoqchi edingiz.
+2. Nimani sinab koʻrdingiz.
 3. Nima chiqdi (xato matni, skrinshot).

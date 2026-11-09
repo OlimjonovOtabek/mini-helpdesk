@@ -5,7 +5,7 @@ Ilova Angular va PrimeNG asosida yozilgan, maʼlumotlar esa lokal mock API (json
 
 ## Talablar
 
-- Node.js 22 yoki undan yangi (versiya `.nvmrc` faylida koʻrsatilgan)
+- Node.js 22.22.3+ yoki 24.15.0+ (Angular CLI talabi; tavsiya etilgan versiya `.nvmrc` faylida)
 - npm
 
 ## Oʻrnatish
