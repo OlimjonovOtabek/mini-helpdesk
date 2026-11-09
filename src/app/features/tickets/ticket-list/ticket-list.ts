@@ -12,8 +12,8 @@ import { API_URL } from '../../../core/api-url';
 import { ConfirmDialog, ConfirmDialogData } from '../../../shared/confirm-dialog/confirm-dialog';
 import { PriorityBadge } from '../../../shared/priority-badge/priority-badge';
 import { StatusBadge } from '../../../shared/status-badge/status-badge';
-import { Ticket, User } from '../ticket.model';
-import { TicketsService } from '../tickets.service';
+import { Ticket, User } from '../../../api/tickets/ticket.model';
+import { TicketsService } from '../../../api/tickets/tickets.service';
 
 @Component({
   imports: [Button, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip],

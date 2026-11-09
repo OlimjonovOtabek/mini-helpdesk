@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { Priority } from '../../features/tickets/ticket.model';
+import { Priority } from '../../api/tickets/ticket.model';
 
 const PRIORITY_CONFIG: Record<Priority, { label: string; tone: string }> = {
   low: { label: 'Past', tone: 'neutral' },
