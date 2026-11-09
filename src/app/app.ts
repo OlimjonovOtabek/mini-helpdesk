@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Toast } from 'primeng/toast';
+import { Shell } from './core/layout/shell/shell';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [Shell, Toast],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
 })
-export class App {
-  protected readonly title = signal('mini-helpdesk');
-}
+export class App {}

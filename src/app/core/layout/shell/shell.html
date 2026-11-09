@@ -1,0 +1,26 @@
+<p-toolbar class="toolbar">
+  <ng-template #start>
+    <a class="brand" routerLink="/">
+      <i class="pi pi-headphones" aria-hidden="true"></i>
+      <span>Mini Helpdesk</span>
+    </a>
+  </ng-template>
+</p-toolbar>
+
+<div class="layout">
+  <nav class="sidenav" aria-label="Asosiy menyu">
+    <a
+      class="nav-link"
+      routerLink="/tickets"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <i class="pi pi-inbox" aria-hidden="true"></i>
+      <span>Murojaatlar</span>
+    </a>
+  </nav>
+
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>
