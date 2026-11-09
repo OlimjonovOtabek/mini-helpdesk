@@ -30,6 +30,39 @@ feat: add ticket detail page
 fix: show correct label for closed tickets
 ```
 
+## Kod tuzilishi
+
+### Servislar va modellar
+
+Backend bilan ishlaydigan servislar va modellar `src/app/api/` papkasida, domen boʻyicha joylashadi.
+Har bir domen papkasida uning servisi va modellar fayli boʻladi:
+
+```text
+src/app/api/
+  tickets/
+    tickets.service.ts
+    ticket.model.ts
+```
+
+### Dialoglar
+
+- `DialogService` (`primeng/dynamicdialog`) ishlatilmaydi. Dialog shablonda `<p-dialog>` bilan yoziladi, koʻrinishi `[(visible)]` orqali boshqariladi.
+- Oʻchirish kabi amallarni tasdiqlash uchun `shared/confirm-dialog` komponentidan foydalaniladi.
+- Feature komponentida yaratish yoki tahrirlash dialogi boʻlsa, u alohida komponentga chiqariladi va komponent nomiga `.form` qoʻshib nomlanadi:
+
+```text
+features/tickets/ticket-list/
+  ticket-list.ts
+  ticket-list.html
+  ticket-list.form.ts
+  ticket-list.form.html
+```
+
+### Formalar
+
+Formalar Reactive Forms (`FormGroup`, `FormControl`) bilan yoziladi.
+Maydon qiymatlarining oʻzgarishi RxJS orqali (`valueChanges`) kuzatiladi.
+
 ## PR ochishdan oldin
 
 Quyidagilarning hammasi xatosiz oʻtishi kerak:
