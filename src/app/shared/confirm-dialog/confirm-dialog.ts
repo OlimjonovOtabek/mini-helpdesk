@@ -1,25 +1,28 @@
-import { Component, inject } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 import { Button } from 'primeng/button';
-import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-
-export interface ConfirmDialogData {
-  message: string;
-  confirmLabel: string;
-  cancelLabel: string;
-}
+import { Dialog } from 'primeng/dialog';
 
 @Component({
-  imports: [Button],
+  imports: [Button, Dialog],
   selector: 'app-confirm-dialog',
   styleUrl: './confirm-dialog.scss',
   templateUrl: './confirm-dialog.html',
 })
 export class ConfirmDialog {
-  private readonly ref = inject(DynamicDialogRef);
-  protected readonly data =
-    inject<DynamicDialogConfig<ConfirmDialogData>>(DynamicDialogConfig).data;
+  readonly visible = model(false);
+  readonly header = input.required<string>();
+  readonly message = input.required<string>();
+  readonly confirmLabel = input('Tasdiqlash');
+  readonly cancelLabel = input('Bekor qilish');
 
-  protected close(confirmed: boolean): void {
-    this.ref.close(confirmed);
+  readonly confirmed = output<void>();
+
+  protected confirm(): void {
+    this.visible.set(false);
+    this.confirmed.emit();
+  }
+
+  protected cancel(): void {
+    this.visible.set(false);
   }
 }

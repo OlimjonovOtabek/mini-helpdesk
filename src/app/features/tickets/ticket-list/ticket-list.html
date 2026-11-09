@@ -80,4 +80,12 @@
       </ng-template>
     </p-table>
   </div>
+
+  <app-confirm-dialog
+    header="Murojaatni oʻchirish"
+    [message]="deleteMessage()"
+    confirmLabel="Oʻchirish"
+    [(visible)]="deleteDialogVisible"
+    (confirmed)="deleteTicket()"
+  />
 </section>

@@ -5,7 +5,6 @@ import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
 import { MessageService } from 'primeng/api';
 import { providePrimeNG } from 'primeng/config';
-import { DialogService } from 'primeng/dynamicdialog';
 import { routes } from './app.routes';
 import { API_URL } from './core/api-url';
 import { PRIMENG_LICENSE } from './core/primeng-license';
@@ -52,6 +51,5 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     MessageService,
-    DialogService,
   ],
 };

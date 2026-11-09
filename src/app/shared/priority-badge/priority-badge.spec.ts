@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Priority } from '../../features/tickets/ticket.model';
+import { Priority } from '../../api/tickets/ticket.model';
 import { PriorityBadge } from './priority-badge';
 
 describe('PriorityBadge', () => {
