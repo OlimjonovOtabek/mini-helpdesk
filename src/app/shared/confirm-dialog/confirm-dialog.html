@@ -1,11 +1,15 @@
-<p class="message">{{ data?.message }}</p>
+<p-dialog
+  [header]="header()"
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '440px' }"
+>
+  <p class="message">{{ message() }}</p>
 
-<div class="actions">
-  <p-button
-    [label]="data?.cancelLabel"
-    severity="secondary"
-    [text]="true"
-    (onClick)="close(false)"
-  />
-  <p-button [label]="data?.confirmLabel" severity="danger" (onClick)="close(true)" />
-</div>
+  <ng-template #footer>
+    <p-button [label]="cancelLabel()" severity="secondary" [text]="true" (onClick)="cancel()" />
+    <p-button [label]="confirmLabel()" severity="danger" (onClick)="confirm()" />
+  </ng-template>
+</p-dialog>
