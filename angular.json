@@ -58,6 +58,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 4215
+          },
           "configurations": {
             "production": {
               "buildTarget": "mini-helpdesk:build:production"

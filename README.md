@@ -33,7 +33,7 @@ Ikkita terminal kerak:
 
 1. Birinchi terminalda mock API'ni ishga tushiring: `npm run api` (http://localhost:3000).
 2. Ikkinchi terminalda ilovani ishga tushiring: `npm start`.
-3. Brauzerda http://localhost:4200 manzilini oching.
+3. Brauzerda http://localhost:4215 manzilini oching.
 
 ## Maʼlumotni boshlangʻich holatga qaytarish
 
@@ -50,7 +50,7 @@ npm run api:reset
 
 | Skript                 | Vazifasi                                                           |
 | ---------------------- | ------------------------------------------------------------------ |
-| `npm start`            | Ilovani http://localhost:4200 manzilida ishga tushiradi            |
+| `npm start`            | Ilovani http://localhost:4215 manzilida ishga tushiradi            |
 | `npm run api`          | Mock API'ni http://localhost:3000 manzilida ishga tushiradi        |
 | `npm run api:reset`    | `db.json`ni `db.seed.json` asosida qayta yaratadi                  |
 | `npm run lint`         | ESLint bilan kodni tekshiradi                                      |
