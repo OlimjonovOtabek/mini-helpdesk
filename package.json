@@ -17,7 +17,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "pretest": "npm run primeng:license --silent",
-    "test": "ng test",
+    "test": "ng test --watch=false",
     "lint": "ng lint",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
