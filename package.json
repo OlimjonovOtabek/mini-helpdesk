@@ -2,10 +2,6 @@
   "name": "mini-helpdesk",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
-  },
-  "packageManager": "npm@11.12.1",
   "scripts": {
     "ng": "ng",
     "primeng:license": "node scripts/prepare-license.mjs",
