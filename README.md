@@ -62,3 +62,9 @@ npm run api:reset
 ## Ish tartibi
 
 Ticketlar bilan qanday ishlash, branch va commit nomlari, Pull Request talablari [CONTRIBUTING.md](CONTRIBUTING.md) faylida yozilgan.
+
+ ## arxitektura
+ api papkasini ichida ticket larga tegishli bulgan servise va modul lar joylashkan
+ core papkani ichida asosiy, xar bir page da ishtrok  etiladigan  component saxlanadi
+ features papkasida pagelar joylashgan
+ share papkasida kop ishlatiladigan component lar joylashgan
