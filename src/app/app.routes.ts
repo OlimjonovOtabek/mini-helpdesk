@@ -1,11 +1,16 @@
 import { Routes } from '@angular/router';
 import { NotFound } from './core/not-found/not-found';
+import { ticketsRoutes } from './features/tickets/tickets.routes';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'tickets' },
+  { path: '', pathMatch: 'full', redirectTo: '' },
   {
     path: 'tickets',
-    loadChildren: () => import('./features/tickets/tickets.routes').then((m) => m.ticketsRoutes),
+    children:  ticketsRoutes,
+  },
+  {
+    path: 'not-found',
+    component: NotFound,
   },
   { path: '**', component: NotFound, title: 'Sahifa topilmadi | Mini Helpdesk' },
 ];

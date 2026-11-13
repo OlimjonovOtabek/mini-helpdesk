@@ -1,0 +1,49 @@
+@if (loading()) {
+<div class="spiner_wrap">
+    <p-progress-spinner strokeWidth="18" fill="transparent" animationDuration=".5s"
+        [style]="{ width: '50px', height: '50px' }" />
+</div>
+}@else if(ticket(); as item){
+<div class="cell_conten">
+    <p class="cell_text">Sarlavha :</p>
+    <p class="cell_text">{{item.title}} </p>
+</div>
+
+<div class="cell_conten">
+    <p class="cell_text">Tavsif :</p>
+    <p class="cell_text">{{item.description}} </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Holat :</p>
+    <p class="cell_text">
+        <app-status-badge [status]="item.status" />
+    </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Ustuvorlik :</p>
+    <p class="cell_text">
+        <app-priority-badge [priority]="item.priority" />
+    </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Kategoriya :</p>
+    <p class="cell_text">{{item.category}} </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Masʼul :</p>
+    <p class="cell_text">@if (item.assigneeId === null) {
+        <span class="unassigned">Biriktirilmagan</span>
+        } @else {
+        {{ assigneeName(item.assigneeId) }}
+        }
+    </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Yaratilgan :</p>
+    <p class="cell_text">{{item.createdAt}} </p>
+</div>
+<div class="cell_conten">
+    <p class="cell_text">Yangilangan :</p>
+    <p class="cell_text">{{item.updatedAt}} </p>
+</div>
+}

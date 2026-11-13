@@ -12,9 +12,10 @@ import { PriorityBadge } from '../../../shared/priority-badge/priority-badge';
 import { StatusBadge } from '../../../shared/status-badge/status-badge';
 import { Ticket, User } from '../../../api/tickets/ticket.model';
 import { TicketsService } from '../../../api/tickets/tickets.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip],
+  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, RouterLink],
   selector: 'app-ticket-list',
   styleUrl: './ticket-list.scss',
   templateUrl: './ticket-list.html',
