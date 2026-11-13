@@ -35,9 +35,9 @@
       </ng-template>
 
       <ng-template #body let-ticket>
-        <tr>
-          <td class="id-cell">{{ ticket.id }}</td>
-          <td class="title-cell">
+        <tr >
+          <td class="id-cell">{{ ticket.id}}</td>
+          <td class="title-cell" [routerLink]="['/tickets', ticket.id]">
             <span class="title" [pTooltip]="ticket.title" tooltipPosition="top">
               {{ ticket.title }}
             </span>
