@@ -4,46 +4,60 @@
         [style]="{ width: '50px', height: '50px' }" />
 </div>
 }@else if(ticket(); as item){
-<div class="cell_conten">
-    <p class="cell_text">Sarlavha :</p>
-    <p class="cell_text">{{item.title}} </p>
+
+<div class="ticket-card">
+    <div class="ticket-header">
+        <div class="">
+            <div class="">
+                <p class="title">MUROJAAT TAFSILOTLARI</p>
+                <p class="description">{{item.title}} </p>
+            </div>
+            <div class="bottom">
+                <p class="title">Tavsif</p>
+                <p class="description">{{item.title}} </p>
+            </div>
+        </div>
+        <app-status-badge [status]="item.status" />
+    </div>
+    <div class="ticket-info">
+        <div class="info-item">
+            <p>Ustuvorlik</p>
+            <strong>
+                <app-priority-badge [priority]="item.priority" />
+            </strong>
+        </div>
+        <div class="info-item">
+            <p>Kategoriya</p>
+            <strong>{{ item.category }}</strong>
+        </div>
+
+        <div class="info-item">
+            <p>Mas’ul</p>
+            @if (item.assigneeId === null) {
+                <strong class="unassigned">Biriktirilmagan</strong>
+                } @else {
+                {{ assigneeName(item.assigneeId) }}
+                }
+            
+        </div>
+        <div class="info-item">
+            <p>Holat</p>
+            <strong>
+                <app-status-badge [status]="item.status" />
+            </strong>
+        </div>
+    </div>
+    <div class="ticket-data">
+        <div class="info-item">
+            <p>Yaratilgan</p>
+            <strong>{{item.createdAt}}</strong>
+        </div>
+
+        <div class="info-item">
+            <p>Yangilangan</p>
+            <strong>{{item.updatedAt}}</strong>
+        </div>
+    </div>
 </div>
 
-<div class="cell_conten">
-    <p class="cell_text">Tavsif :</p>
-    <p class="cell_text">{{item.description}} </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Holat :</p>
-    <p class="cell_text">
-        <app-status-badge [status]="item.status" />
-    </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Ustuvorlik :</p>
-    <p class="cell_text">
-        <app-priority-badge [priority]="item.priority" />
-    </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Kategoriya :</p>
-    <p class="cell_text">{{item.category}} </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Masʼul :</p>
-    <p class="cell_text">@if (item.assigneeId === null) {
-        <span class="unassigned">Biriktirilmagan</span>
-        } @else {
-        {{ assigneeName(item.assigneeId) }}
-        }
-    </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Yaratilgan :</p>
-    <p class="cell_text">{{item.createdAt}} </p>
-</div>
-<div class="cell_conten">
-    <p class="cell_text">Yangilangan :</p>
-    <p class="cell_text">{{item.updatedAt}} </p>
-</div>
 }
