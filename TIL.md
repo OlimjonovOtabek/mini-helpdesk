@@ -1,0 +1,49 @@
+# TIL — bugun nima oʻrgandim
+
+Har kuni ish oxirida 10-15 qator yozasiz: bugun nima oʻrgandingiz, oʻz soʻzlaringiz bilan.
+Mentor ertangi daily'da shu fayldan savol beradi.
+
+## Qoidalar
+
+- Har bir kun uchun alohida sarlavha: `## YYYY-MM-DD`.
+- Eng yangi kun eng tepada turadi (shu faylning "Yozuvlar" boʻlimi boshida).
+- Har kuni **10-15 qator**, toʻrtta boʻlim bilan (namunaga qarang):
+  - **Oʻrgandim** (4-6 qator): yangi tushuncha nima va nima uchun kerak.
+  - **Loyihada** (2-4 qator): qayerda ishlatdingiz, fayl yoki PR raqami bilan.
+  - **Muammo va yechim** (2-3 qator): nima ishlamadi, sababini qanday topdingiz.
+  - **Savol** (1-2 qator): nimani hali tushunmadingiz.
+- Hujjatdan nusxa olmang, oʻz soʻzlaringiz bilan yozing. Tushuntira olmagan narsangizni hali oʻrganmagansiz.
+- Qatorni toʻldirish uchun yozmang: har bir qatorda bitta aniq fikr boʻlsin.
+- Oʻzgarish joriy ticket PR'ingizga alohida commit sifatida qoʻshiladi: `docs: update TIL`.
+
+## Namuna
+
+```markdown
+## 2026-11-18
+
+### Oʻrgandim
+
+- Signal qiymati oʻzgarganini eski va yangi qiymatni `===` bilan solishtirib biladi.
+- Massivga `push` qilsam havola oʻsha-oʻsha qoladi, shuning uchun signal hech kimga xabar bermaydi.
+- Toʻgʻri yoʻl: `update(list => [...list, item])`, yaʼni har safar yangi massiv.
+- `set` qiymatni toʻliq almashtiradi, `update` esa oldingi qiymatdan yangisini hisoblaydi.
+- json-server'da `/comments?ticketId=3` faqat shu murojaatning izohlarini qaytaradi.
+
+### Loyihada
+
+- B1: izohlar `ticket-detail.ts`da `comments` signal'ida saqlanadi.
+- Yangi izoh POST'dan keyin server qaytargan obyekt `update` bilan roʻyxatga qoʻshiladi, qayta yuklanmaydi.
+
+### Muammo va yechim
+
+- Izoh qoʻshilgach ekranda chiqmadi. Network tab'da POST 201 qaytgan edi, demak muammo UI'da.
+- Sababi `push` ekan, `update`ga almashtirdim.
+
+### Savol
+
+- `effect` qachon ishga tushadi va uni qayerda ishlatish mumkin emas?
+```
+
+## Yozuvlar
+
+<!-- Yangi kunni shu qatordan keyin qoʻshing -->
