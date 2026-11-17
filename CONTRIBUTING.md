@@ -93,6 +93,6 @@ Savolda uchta narsani yozing:
 
 ## TIL
 
-Har kuni ish oxirida [TIL.md](TIL.md) fayliga 3-5 qator yozasiz: bugun nima oʻrgandingiz.
+Har kuni ish oxirida [TIL.md](TIL.md) fayliga 10-15 qator yozasiz: nima oʻrgandingiz, loyihada qayerda ishlatdingiz, qanday muammoga duch keldingiz va nimani hali tushunmadingiz.
 Tushunmagan narsani `Savol:` bilan yozing, ertangi daily'da shu muhokama qilinadi.
 Oʻzgarish joriy ticket PR'ingizga `docs: update TIL` commiti sifatida qoʻshiladi.
