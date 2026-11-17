@@ -90,3 +90,9 @@ Savolda uchta narsani yozing:
 1. Nima qilmoqchi edingiz.
 2. Nimani sinab koʻrdingiz.
 3. Nima chiqdi (xato matni, skrinshot).
+
+## TIL
+
+Har kuni ish oxirida [TIL.md](TIL.md) fayliga 3-5 qator yozasiz: bugun nima oʻrgandingiz.
+Tushunmagan narsani `Savol:` bilan yozing, ertangi daily'da shu muhokama qilinadi.
+Oʻzgarish joriy ticket PR'ingizga `docs: update TIL` commiti sifatida qoʻshiladi.
