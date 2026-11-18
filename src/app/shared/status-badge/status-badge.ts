@@ -4,6 +4,7 @@ const STATUS_CONFIG: Record<string, { label: string; tone: string }> = {
   new: { label: 'Yangi', tone: 'info' },
   in_progress: { label: 'Jarayonda', tone: 'warning' },
   solved: { label: 'Hal qilingan', tone: 'success' },
+  // resolved: { label: 'Hal qilingan', tone: 'success' },
   closed: { label: 'Yopilgan', tone: 'neutral' },
 };
 
@@ -14,5 +15,10 @@ const STATUS_CONFIG: Record<string, { label: string; tone: string }> = {
 })
 export class StatusBadge {
   readonly status = input.required<string>();
-  readonly config = computed(() => STATUS_CONFIG[this.status()] ?? STATUS_CONFIG['new']);
+  readonly statusKey  = computed(() => {
+    return this.status() === 'resolved' ? 'solved' : this.status()
+  })
+
+  readonly config = computed(() => STATUS_CONFIG[this.statusKey ()] ?? STATUS_CONFIG['new']);
+
 }

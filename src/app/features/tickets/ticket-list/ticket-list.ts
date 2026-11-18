@@ -4,7 +4,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MessageService } from 'primeng/api';
 import { Button } from 'primeng/button';
 import { ProgressBar } from 'primeng/progressbar';
-import { TableModule } from 'primeng/table';
+import { TableLazyLoadEvent, TableModule, } from 'primeng/table';
 import { Tooltip } from 'primeng/tooltip';
 import { API_URL } from '../../../core/api-url';
 import { ConfirmDialog } from '../../../shared/confirm-dialog/confirm-dialog';
@@ -36,24 +36,59 @@ export class TicketList {
   protected readonly deleteMessage = computed(
     () => `«${this.ticketToDelete()?.title ?? ''}» murojaati oʻchiriladi. Davom etasizmi?`,
   );
+  page = signal(1);
+  perPage = signal(10)
+  first = signal(0)
+  totalRecords = signal(0)
 
   constructor() {
-    this.ticketsService
-      .getAll()
-      .pipe(takeUntilDestroyed())
-      .subscribe((tickets) => {
-        const sorted = [...tickets].sort(
-          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-        );
-        this.tickets.set(sorted);
-        this.loading.set(false);
-      });
+    this.loadTickets()
 
     this.http
       .get<User[]>(`${this.apiUrl}/users`)
       .pipe(takeUntilDestroyed())
       .subscribe((users) => this.users.set(users));
   }
+
+  loadTickets() {
+    this.loading.set(true)
+    this.ticketsService
+      .getAll(this.page(), this.perPage())
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((response) => {
+        const sorted = [...(response.body ?? [])].sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() -
+            new Date(a.createdAt).getTime(),
+        );
+
+        this.tickets.set(sorted);
+        const total = response.headers.get('X-Total-Count')
+        if (total !== null) {
+          this.totalRecords.set(Number(total));
+        }
+        this.loading.set(false);
+      });
+  }
+
+  onPageChange(event: TableLazyLoadEvent) {
+    debugger;
+    
+    // const first = event.first ?? 0;
+    // const rows = event.rows ?? 10;
+    
+    // this.first.set(first);
+    // this.perPage.set(rows);
+    // this.page.set(Math.floor(first / rows) + 1);
+    
+
+    // console.log('Page:', page);
+    // console.log('Rows:', rows);
+    // console.log('First:', first);
+
+    this.loadTickets();
+  }
+
 
   protected assigneeName(assigneeId: number): string {
     return this.users().find((user) => user.id === assigneeId)?.name ?? '';
