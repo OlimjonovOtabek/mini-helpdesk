@@ -17,6 +17,7 @@ export class TicketDetail {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private ticketsService = inject(TicketsService)
+
   ticket = signal<Ticket | null>(null)
   users = signal<User[]>([]);
   loading = signal(false)
@@ -46,7 +47,7 @@ export class TicketDetail {
 
     })
   }
-  protected assigneeName(assigneeId: number): string {
-    return this.users().find((user) => user.id === assigneeId)?.name ?? '';
+    protected assigneeName(assigneeId: number): string {
+      return this.users().find((user) => user.id === assigneeId)?.name ?? '';
   }
 }
