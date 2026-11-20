@@ -46,6 +46,3 @@ Thumbs.db
 # Local environment
 .env
 src/app/core/primeng-license.ts
-
-# Mock API data
-/db.json

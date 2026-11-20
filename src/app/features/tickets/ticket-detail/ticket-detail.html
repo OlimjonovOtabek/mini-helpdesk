@@ -3,61 +3,133 @@
     <p-progress-spinner strokeWidth="18" fill="transparent" animationDuration=".5s"
         [style]="{ width: '50px', height: '50px' }" />
 </div>
-}@else if(ticket(); as item){
-
-<div class="ticket-card">
-    <div class="ticket-header">
+}@else if(ticket(); as item ){
+<section class="">
+    <a routerLink="/tickets" class="back"><i class="pi pi-arrow-left"></i> MUROJAAT ro'yxati</a>
+    <div class="ticket_header">
         <div class="">
-            <div class="">
-                <p class="title">MUROJAAT TAFSILOTLARI</p>
-                <p class="description">{{item.title}} </p>
+            <div class="ticket_status">
+                <app-status-badge [status]="item.status" class="" />
+                <app-priority-badge [priority]="item.priority" class="priority" />
             </div>
-            <div class="bottom">
-                <p class="title">Tavsif</p>
-                <p class="description">{{item.title}} </p>
+            <h1 class="ticket_title">{{item.title}}</h1>
+        </div>
+
+        <div class="">
+            <button class="">
+                <i class="pi pi-pencil"></i>
+                Tahrirlash
+            </button>
+            <button class="">
+                <i class="pi pi-trash"></i>
+                Tahrirlash
+            </button>
+        </div>
+    </div>
+    <div class="ticked_body">
+        <div class="block_one">
+            <div class="description">
+                <h2 class="description_title">Tavsif</h2>
+                <p class="">Ertalabdan beri 3-qavatda Wi-Fi tarmogʻi koʻrinmayapti. Butun boʻlim internetsiz qoldi.</p>
+            </div>
+            <div class="comments">
+                <div class="comments_header">
+                    <h2 class="comments_title">Izohlar</h2>
+                </div>
+                <div class="comments_body">
+                    <div class="comments_card">
+                        <div class=""></div>
+                        <div class="">
+                            <p class="">Lorem ipsum dolor sit amet.</p>
+                            <p class="">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="comments_card">
+                        <div class=""></div>
+                        <div class="">
+                            <p class="">Lorem ipsum dolor sit amet.</p>
+                            <p class="">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+                        <select formControlName="name">
+                            @for (user of users(); track user.id) {
+                            <option [value]="user.id">
+                                {{user.name}}
+                            </option>
+                            }
+                        </select>
+
+                        @if (form.controls.name.touched && form.controls.name.hasError('required')) {
+                        <small>Majburiy</small>
+                        }
+                        <input type="date" formControlName="date" class="input">
+                        @if (form.controls.date.touched && form.controls.date.hasError('required')) {
+                        <small>Majburiy</small>
+                        }
+                        <textarea rows="5px" formControlName="text" class="input"></textarea>
+                        <button type="submit">Yuborish</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <app-status-badge [status]="item.status" />
-    </div>
-    <div class="ticket-info">
-        <div class="info-item">
-            <p>Ustuvorlik</p>
-            <strong>
-                <app-priority-badge [priority]="item.priority" />
-            </strong>
-        </div>
-        <div class="info-item">
-            <p>Kategoriya</p>
-            <strong>{{ item.category }}</strong>
-        </div>
 
-        <div class="info-item">
-            <p>Mas’ul</p>
-            @if (item.assigneeId === null) {
-                <strong class="unassigned">Biriktirilmagan</strong>
-                } @else {
-                {{ assigneeName(item.assigneeId) }}
-                }
-            
-        </div>
-        <div class="info-item">
-            <p>Holat</p>
-            <strong>
-                <app-status-badge [status]="item.status" />
-            </strong>
+        <div class="">
+            <div class="ticket-card">
+                <div class="ticket-header">
+                    <div class="">
+                        <div class="">
+                            <p class="title">MUROJAAT TAFSILOTLARI</p>
+                            <p class="description">{{item.title}} </p>
+                        </div>
+                        <div class="bottom">
+                            <p class="title">Tavsif</p>
+                            <p class="description">{{item.title}} </p>
+                        </div>
+                    </div>
+                    <app-status-badge [status]="item.status" />
+                </div>
+                <div class="ticket-info">
+                    <div class="info-item">
+                        <p>Ustuvorlik</p>
+                        <strong>
+                            <app-priority-badge [priority]="item.priority" />
+                        </strong>
+                    </div>
+                    <div class="info-item">
+                        <p>Kategoriya</p>
+                        <strong>{{ item.category }}</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <p>Mas’ul</p>
+                        @if (item.assigneeId === null) {
+                        <strong class="unassigned">Biriktirilmagan</strong>
+                        } @else {
+                        {{ assigneeName(item.assigneeId) }}
+                        }
+
+                    </div>
+                    <div class="info-item">
+                        <p>Holat</p>
+                        <strong>
+                            <app-status-badge [status]="item.status" />
+                        </strong>
+                    </div>
+                </div>
+                <div class="ticket-data">
+                    <div class="info-item">
+                        <p>Yaratilgan</p>
+                        <strong>{{item.createdAt}}</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <p>Yangilangan</p>
+                        <strong>{{item.updatedAt}}</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="ticket-data">
-        <div class="info-item">
-            <p>Yaratilgan</p>
-            <strong>{{item.createdAt}}</strong>
-        </div>
-
-        <div class="info-item">
-            <p>Yangilangan</p>
-            <strong>{{item.updatedAt}}</strong>
-        </div>
-    </div>
-</div>
-
+</section>
 }

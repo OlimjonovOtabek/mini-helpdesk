@@ -5,7 +5,7 @@ import { API_URL } from '../../core/api-url';
 import { User } from '../tickets/ticket.model';
 
 @Injectable({ providedIn: 'root' })
-export class TicketsService {
+export class UserService {
   private readonly http = inject(HttpClient);
   private readonly baseUrl = `${inject(API_URL)}/users`;
 
