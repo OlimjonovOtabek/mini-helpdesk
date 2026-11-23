@@ -37,97 +37,81 @@
                     <h2 class="comments_title">Izohlar</h2>
                 </div>
                 <div class="comments_body">
-                    <div class="comments_card">
-                        <div class=""></div>
-                        <div class="">
-                            <p class="">Lorem ipsum dolor sit amet.</p>
-                            <p class="">Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div class="comments_card">
-                        <div class=""></div>
-                        <div class="">
-                            <p class="">Lorem ipsum dolor sit amet.</p>
-                            <p class="">Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
-                        <select formControlName="name">
-                            @for (user of users(); track user.id) {
-                            <option [value]="user.id">
-                                {{user.name}}
-                            </option>
-                            }
-                        </select>
 
-                        @if (form.controls.name.touched && form.controls.name.hasError('required')) {
-                        <small>Majburiy</small>
-                        }
-                        <input type="date" formControlName="date" class="input">
-                        @if (form.controls.date.touched && form.controls.date.hasError('required')) {
-                        <small>Majburiy</small>
-                        }
-                        <textarea rows="5px" formControlName="text" class="input"></textarea>
-                        <button type="submit">Yuborish</button>
-                    </form>
+                    @for (item of ticketComments(); track item.id) {
+                    <div class="comments_card">
+                        <div class="comments_card_header">
+                            <h3>{{item.authorName ?? '--'}}</h3>
+                            <p [style.margin]="0">{{ item.createdAt | date:'dd.MM.yyyy' }} &nbsp; {{item.createdAt |
+                                date:'hh.mm' }}
+                            </p>
+                        </div>
+                        <p [style.margin]="0">{{item.text}} </p>
+                    </div>
+                    }
+
+                    <div class="creat_comment">
+                        <h2 class="creat_comment_tile">Yangi izoh</h2>
+                        <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+                            <select formControlName="name" class="input">
+                                @for (user of users(); track user.id) {
+                                <option [value]="user.id">
+                                    {{user.name}}
+                                </option>
+                                }
+                            </select>
+                            @if (form.controls.name.touched && form.controls.name.hasError('required')) {
+                            <small>Majburiy</small>
+                            }
+                            <input type="datetime-local" formControlName="date" class="input">
+                            @if (form.controls.date.touched && form.controls.date.hasError('required')) {
+                            <small>Majburiy</small>
+                            }
+                            <textarea rows="5px" formControlName="text" class="input"></textarea>
+                            <button type="submit" class="button">
+                                <i class="pi pi-send"></i>
+                                Yuborish
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="">
-            <div class="ticket-card">
-                <div class="ticket-header">
-                    <div class="">
-                        <div class="">
-                            <p class="title">MUROJAAT TAFSILOTLARI</p>
-                            <p class="description">{{item.title}} </p>
-                        </div>
-                        <div class="bottom">
-                            <p class="title">Tavsif</p>
-                            <p class="description">{{item.title}} </p>
-                        </div>
-                    </div>
-                    <app-status-badge [status]="item.status" />
+            <div class="ticket-wrap">
+                <h2 class="">Ma'lumotlar</h2>
+                <div class="ticket_card">
+                    <p class="">Holat</p>
+                    <p class=""><app-status-badge [status]="item.status" /></p>
                 </div>
-                <div class="ticket-info">
-                    <div class="info-item">
-                        <p>Ustuvorlik</p>
-                        <strong>
-                            <app-priority-badge [priority]="item.priority" />
-                        </strong>
-                    </div>
-                    <div class="info-item">
-                        <p>Kategoriya</p>
-                        <strong>{{ item.category }}</strong>
-                    </div>
-
-                    <div class="info-item">
-                        <p>Mas’ul</p>
-                        @if (item.assigneeId === null) {
-                        <strong class="unassigned">Biriktirilmagan</strong>
-                        } @else {
-                        {{ assigneeName(item.assigneeId) }}
-                        }
-
-                    </div>
-                    <div class="info-item">
-                        <p>Holat</p>
-                        <strong>
-                            <app-status-badge [status]="item.status" />
-                        </strong>
-                    </div>
+                <div class="ticket_card">
+                    <p>Ustuvorlik</p>
+                    <p>
+                        <app-priority-badge [priority]="item.priority" />
+                    </p>
                 </div>
-                <div class="ticket-data">
-                    <div class="info-item">
-                        <p>Yaratilgan</p>
-                        <strong>{{item.createdAt}}</strong>
-                    </div>
-
-                    <div class="info-item">
-                        <p>Yangilangan</p>
-                        <strong>{{item.updatedAt}}</strong>
-                    </div>
+                <div class="ticket_card">
+                    <p>Kategoriya</p>
+                    <p>{{ item.category }}</p>
                 </div>
+                <div class="ticket_card">
+                    <p>Mas’ul</p>
+                    @if (item.assigneeId === null) {
+                    <p class="unassigned">Biriktirilmagan</p>
+                    } @else {
+                    {{ assigneeName(item.assigneeId) }}
+                    }
+                </div>
+                <div class="ticket_card">
+                    <p>Yaratilgan</p>
+                    <p>{{item.createdAt}}</p>
+                </div>
+                <div class="ticket_card">
+                    <p>Yangilangan</p>
+                    <p>{{item.updatedAt}}</p>
+                </div>
+
             </div>
         </div>
     </div>

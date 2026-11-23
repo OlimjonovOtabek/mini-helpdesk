@@ -486,7 +486,41 @@
       "authorId": 3,
       "text": "Rahbariyatdan ruxsat soʻradim, tasdiqlansa oʻtkazib beraman.",
       "createdAt": "2026-11-04T09:14:00Z"
+    },
+    {
+      "ticketId": 29,
+      "authorId": 1,
+      "text": "s",
+      "createdAt": "2026-11-23",
+      "id": 13
+    },
+    {
+      "ticketId": 29,
+      "authorId": 1,
+      "text": "Raxmat",
+      "createdAt": "2026-11-23",
+      "id": 14
+    },
+    {
+      "ticketId": 29,
+      "authorId": 5,
+      "text": "Haliham ishlavadi",
+      "createdAt": "2026-11-23",
+      "id": 15
+    },
+    {
+      "ticketId": 29,
+      "authorId": 1,
+      "text": "Zor",
+      "createdAt": "2026-11-23T18:33",
+      "id": 16
+    },
+    {
+      "ticketId": 29,
+      "authorId": 3,
+      "text": "Ishladi",
+      "createdAt": "2026-11-23T18:53",
+      "id": 17
     }
   ]
-
 }

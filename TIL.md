@@ -48,24 +48,9 @@ Mentor ertangi daily'da shu fayldan savol beradi.
 
 <!-- Yangi kunni shu qatordan keyin qoʻshing -->
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## 2026-11-19
-
-### Oʻrgandim
-
-- `Reactive Form` Angular/Forms дан импорт килинади. inject оркали FormBuilder чакирамиз. FormBuilder бизга форма яратишда йордам беради, у оркали FormGroup яратирилади. FormGroup   - ичида форманинг полялари жойлашган яний FormControl. 
-- FormControl html даги  input га богланади formControlName оркали, энди у input ни TS оркали бошкарса болади
-- `nonNullable`: TypeScript даражасида input string | null, nonNullable input қийматини null беришга йўл қўймайд ва reset() чақирилганда input бошланғич қийматига қайтаради.
-- `markAllAsTouched` input ларни touched килиб кояди. Уни йордамида валидация хатоликларини user корсатаоламиз 
-- `signal` Angularg га оз хакида ма'лумот беради
-- `set` signal ни ма'лумотини озгартуриш учун ишлатиладиган метод
-- `update` signal ни ески (signal озини) ма'лумотини асосида озгартуриш учун ишлатиладиган метод
-- `computed` бошка signal асосида оз кийматини чикаради
-- `effect` качен ишлатинилади, качонки signal озгаргандан сонг биз TS тарапта кандайдир иш килмокчи булсак
-![alt text](image.png)
-
-
-
-## 2026-11-23
 
 ### Oʻrgandim
 
@@ -82,14 +67,58 @@ Mentor ertangi daily'da shu fayldan savol beradi.
 
 ### Loyihada
 
-- Users get() запрос йордамида база дан олиб келдим ва уларни формани ичида селектга жойлаштирдим 
+- 
 - 
 
 ### Muammo va yechim
 
-- Izoh qoʻshilgach ekranda chiqmadi. Network tab'da POST 201 qaytgan edi, demak muammo UI'da.
-- Sababi `push` ekan, `update`ga almashtirdim.
+- 
+- 
 
 ### Savol
 
-- `effect` qachon ishga tushadi va uni qayerda ishlatish mumkin emas?
+- 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-20
+### Oʻrgandim
+
+- `signal` Angularg га оз хакида ма'лумот беради
+- `set` signal ни ма'лумотини озгартуриш учун ишлатиладиган метод
+- `update` signal ни ески (signal озини) ма'лумотини асосида озгартуриш учун ишлатиладиган метод
+- `computed` бошка signal асосида оз кийматини чикаради
+- `effect` качен ишлатинилади, качонки signal озгаргандан сонг биз TS тарапта кандайдир иш килмокчи булсак
+![alt text](image.png)
+
+### Loyihada
+
+- Users get() запрос йордамида база дан олиб келдим ва уларни формани ичида селектга жойлаштирдим 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-23
+
+### Oʻrgandim
+
+- `getRawValue- формани ичидаги кийматларни олиб келади очирилга болса хам (disabled)`
+
+### Loyihada
+
+- Формани comments га POST метод оркали юбордим
+- comments get() запрос йордамида база дан олиб келдим ва уларни формани тепа кисмига жойлаштирдим
+- refactor: ger-all-users-funcrion  
+Эски холат:
+getAll(): Observable<HttpResponse<User[]>> {
+    return this.http.get<User[]>(this.baseUrl,{
+     observe: 'response'
+    });
+  }
+Озгаргани:
+getAll() {
+    return this.http.get<User[]>(this.baseUrl);
+  }
+- ![alt text](image-1.png)
+
+### Muammo va yechim
+-  

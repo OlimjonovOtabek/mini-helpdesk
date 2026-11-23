@@ -33,6 +33,7 @@ export interface Comment {
   text: string;
   createdAt: string;
 }
+
 export interface PaginatedTickets {
   first: number;
   prev: number | null;
