@@ -37,6 +37,7 @@ export class TicketDetail {
     date: ['', Validators.required],
     text: ['', Validators.required],
   })
+  /** */
   submit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
@@ -46,11 +47,10 @@ export class TicketDetail {
     this.form.reset()
   }
   /** */
-
   ngOnInit() {
     this.loadTiket()
   }
-
+/** */
   loadTiket() {
     this.loading.set(true)
     this.ticketsService.getById(this.ticketId).subscribe({
@@ -68,9 +68,9 @@ export class TicketDetail {
         }
       }
     })
-    this.userService.getAll().subscribe((respons) => {
-      this.loading.set(false)
-      this.users.set(respons.body ?? [])
+
+    this.userService.getAll().subscribe((data) => {
+     this.users.set(data)
     })
   }
   protected assigneeName(assigneeId: number): string {

@@ -10,21 +10,21 @@ export class UserService {
   private readonly baseUrl = `${inject(API_URL)}/users`;
 
   getPaged(page: number, perPage: number): Observable<HttpResponse<User[]>> {
-    return this.http.get<User[]>(this.baseUrl,{
+    return this.http.get<User[]>(this.baseUrl, {
       params: {
-      // _page: page,
-      // _per_page: perPage
-    },
-     observe: 'response'
+        // _page: page,
+        // _per_page: perPage
+      },
+      observe: 'response'
     });
   }
 
-   getAll(): Observable<HttpResponse<User[]>> {
-    return this.http.get<User[]>(this.baseUrl,{
-
-     observe: 'response'
-    });
+  getAll() {
+    return this.http.get<User[]>(this.baseUrl);
   }
+
+
+
 
   getById(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);
