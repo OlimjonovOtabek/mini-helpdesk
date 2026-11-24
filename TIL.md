@@ -120,5 +120,52 @@ getAll() {
   }
 - ![alt text](image-1.png)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-24
+
+### Oʻrgandim
+- pipe ма'лумотни бизга керакли кориншда корсататиш учун хизмат килади
+
 ### Muammo va yechim
--  
+- Sana formatlash kodi takrorlanib ketgan: ticket-list.tsda formatCreatedAt va formatUpdatedAt funksiyalari bir xil.
+Murojaat sahifasida esa sana umuman formatlanmagan, 2026-10-03T04:55:00Z ko'rinishida chiqyapti.
+Mas'ul xodim ismi ham shablonda metod chaqirib olinyapti.
+TS:
+protected formatCreatedAt(ticket: Ticket): string {
+    const date = new Date(ticket.createdAt);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+  }
+  protected formatUpdatedAt(ticket: Ticket): string {
+    const date = new Date(ticket.updatedAt);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+  }
+  Html:
+      <td 
+          class="date-cell" 
+          pTooltip="{{ticket.createdAt | date:'dd.MM.yyyy'}}" 
+          tooltipPosition="top">{{
+            ticket.createdAt | timeAgo}} 
+      </td>
+      <td 
+          class="date-cell" 
+          pTooltip="{{ticket.createdAt | date:'dd.MM.yyyy'}}" 
+          tooltipPosition="top">
+          {{ticket.updatedAt | timeAgo}}
+       </td>
+
+
+
+### Loyihada
+
+- PIPE time-ago (shares/pipe/time-ago-pipe.ts) яратилди ва вазифада берилган жойларда ишлатилди 

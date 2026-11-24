@@ -521,6 +521,20 @@
       "text": "Ishladi",
       "createdAt": "2026-11-23T18:53",
       "id": 17
+    },
+    {
+      "ticketId": 29,
+      "authorId": 3,
+      "text": "zor zor",
+      "createdAt": "2026-11-24T15:49",
+      "id": 18
+    },
+    {
+      "ticketId": 29,
+      "authorId": 4,
+      "text": "a",
+      "createdAt": "2026-11-24T15:51",
+      "id": 19
     }
   ]
 }

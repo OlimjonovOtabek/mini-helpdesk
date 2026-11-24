@@ -13,13 +13,15 @@ import { UserService } from '../../../api/users/user.service';
 import { CommentsService } from '../../../api/commit/comments.service';
 import { DatePipe, NgStyle } from '@angular/common';
 import { map, switchMap } from 'rxjs';
+import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
+import { TooltipModule } from 'primeng/tooltip';
 
 interface TicketDetailComment extends Comment {
   authorName?: string;
 }
 
 @Component({
-  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule, DatePipe, RouterLink, ReactiveFormsModule, NgStyle],
+  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule,TooltipModule, DatePipe,TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle],
   selector: 'app-ticket-detail',
   styleUrl: './ticket-detail.scss',
   templateUrl: './ticket-detail.html',

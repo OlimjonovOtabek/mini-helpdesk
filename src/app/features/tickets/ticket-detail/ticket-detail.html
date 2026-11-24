@@ -42,9 +42,11 @@
                     <div class="comments_card">
                         <div class="comments_card_header">
                             <h3>{{item.authorName ?? '--'}}</h3>
-                            <p [style.margin]="0">{{ item.createdAt | date:'dd.MM.yyyy' }} &nbsp; {{item.createdAt |
-                                date:'hh.mm' }}
+                            <p [style.margin]="0" pTooltip="{{item.createdAt | date:'dd.MM.yyyy'}}"
+                                tooltipPosition="top">
+                                {{ item.createdAt | timeAgo }}
                             </p>
+
                         </div>
                         <p [style.margin]="0">{{item.text}} </p>
                     </div>
@@ -105,11 +107,11 @@
                 </div>
                 <div class="ticket_card">
                     <p>Yaratilgan</p>
-                    <p>{{item.createdAt}}</p>
+                    <p>{{item.createdAt | date:'dd.MM.yyyy'}}</p>
                 </div>
                 <div class="ticket_card">
                     <p>Yangilangan</p>
-                    <p>{{item.updatedAt}}</p>
+                    <p>{{item.updatedAt | date:'dd.MM.yyyy'}}</p>
                 </div>
 
             </div>

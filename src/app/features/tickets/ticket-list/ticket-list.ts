@@ -5,7 +5,7 @@ import { MessageService } from 'primeng/api';
 import { Button } from 'primeng/button';
 import { ProgressBar } from 'primeng/progressbar';
 import { TableLazyLoadEvent, TableModule, } from 'primeng/table';
-import { Tooltip } from 'primeng/tooltip';
+import { Tooltip, TooltipModule } from 'primeng/tooltip';
 import { API_URL } from '../../../core/api-url';
 import { ConfirmDialog } from '../../../shared/confirm-dialog/confirm-dialog';
 import { PriorityBadge } from '../../../shared/priority-badge/priority-badge';
@@ -13,9 +13,11 @@ import { StatusBadge } from '../../../shared/status-badge/status-badge';
 import { Ticket, User } from '../../../api/tickets/ticket.model';
 import { TicketsService } from '../../../api/tickets/tickets.service';
 import { RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
+import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
 
 @Component({
-  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, RouterLink],
+  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, TooltipModule, RouterLink,DatePipe,TimeAgoPipe],
   selector: 'app-ticket-list',
   styleUrl: './ticket-list.scss',
   templateUrl: './ticket-list.html',
