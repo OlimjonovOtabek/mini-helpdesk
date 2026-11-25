@@ -15,9 +15,10 @@ import { TicketsService } from '../../../api/tickets/tickets.service';
 import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
+import { UserNamePipe } from '../../../shared/pipe/user-name-pipe';
 
 @Component({
-  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, TooltipModule, RouterLink,DatePipe,TimeAgoPipe],
+  imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, TooltipModule, RouterLink,DatePipe,TimeAgoPipe,UserNamePipe],
   selector: 'app-ticket-list',
   styleUrl: './ticket-list.scss',
   templateUrl: './ticket-list.html',

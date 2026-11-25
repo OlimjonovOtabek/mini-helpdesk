@@ -165,7 +165,27 @@ protected formatCreatedAt(ticket: Ticket): string {
        </td>
 
 
-
 ### Loyihada
 
 - PIPE time-ago (shares/pipe/time-ago-pipe.ts) яратилди ва вазифада берилган жойларда ишлатилди 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-25
+
+### Oʻrgandim
+- Pure va impure pipe farq. Pipe стандарт холатда pure. Pure ни impure дан фарки Angular бирчи бор ма'лумотни текширганда (Angular Change Detection оркали текширади) у transform() чакиради ва олинган кийматни саклаб коядию. Кеинги Angular текширувида берилган ма'думот озгартирилмаган булса Angular кайта яна transform() чакирмайди, саклаб колган малумотни беради.
+Impure да (pure:false) Angular хар текширувида transform() чакиради, хар сафар pipe ишга тушади озгаручи озгармаган булса хам
+
+### Muammo va yechim
+- Ism userName pipe orqali olinadi (ticket.assigneeId | userName: users()); shablonda assigneeName() chaqiruvi qolmaydi. Mas'ul yo'q bo'lsa "Biriktirilmagan" chiqadi.
+<td>
+     @if (ticket.assigneeId === null) {
+    <span class="unassigned">Biriktirilmagan</span>
+    } @else {
+    {{ assigneeName(ticket.assigneeId) }}
+    } 
+</td>
+
+- yechim:
+ {{ticket.assigneeId | userName: users()}}

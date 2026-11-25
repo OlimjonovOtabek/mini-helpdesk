@@ -19,9 +19,12 @@ export class TimeAgoPipe implements PipeTransform {
     if (minut < 60) {
       return `${minut} daqiqa oldin`
     }
-    if(hours<60){
+    if (hours < 24) {
       return `${hours} soat oldin`
     }
-    return `${day} kun oldin`
+    if (day === 1) {
+      return 'kecha'
+    }
+    return new Date(value).toLocaleDateString('ru-RU')
   }
 }

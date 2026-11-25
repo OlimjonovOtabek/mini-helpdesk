@@ -12,16 +12,16 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../api/users/user.service';
 import { CommentsService } from '../../../api/commit/comments.service';
 import { DatePipe, NgStyle } from '@angular/common';
-import { map, switchMap } from 'rxjs';
 import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
 import { TooltipModule } from 'primeng/tooltip';
+import { UserNamePipe } from '../../../shared/pipe/user-name-pipe';
 
 interface TicketDetailComment extends Comment {
   authorName?: string;
 }
 
 @Component({
-  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule,TooltipModule, DatePipe,TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle],
+  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule, TooltipModule, DatePipe, TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle,UserNamePipe],
   selector: 'app-ticket-detail',
   styleUrl: './ticket-detail.scss',
   templateUrl: './ticket-detail.html',
@@ -37,12 +37,12 @@ export class TicketDetail {
   users = signal<User[]>([]);
   comment = signal<Comment | null>(null)
   comments = signal<Comment[]>([])
-  
+
   ticketComments = computed<TicketDetailComment[]>(() => {
     const users = this.users();
     const comments = this.comments();
 
-    return comments.map<Comment>(x => ({...x, authorName: users.find(u => x.authorId === u.id)?.name } ))
+    return comments.map<Comment>(x => ({ ...x, authorName: users.find(u => x.authorId === u.id)?.name }))
   })
 
   loading = signal(false)
@@ -112,7 +112,7 @@ export class TicketDetail {
     /** */
     this.commentsService.getAllComments().subscribe({
       next: (data) => {
-        
+
         this.comments.set(data)
         this.loading.set(false);
 
@@ -128,10 +128,8 @@ export class TicketDetail {
       }
     })
   }
-  protected assigneeName(assigneeId: number): string {
+  protected assigneeName(assigneeId: number): string { 
+    console.log(1) 
     return this.users().find((user) => user.id === assigneeId)?.name ?? '';
   }
-
-
-
 }

@@ -535,6 +535,13 @@
       "text": "a",
       "createdAt": "2026-11-24T15:51",
       "id": 19
+    },
+    {
+      "ticketId": 24,
+      "authorId": 1,
+      "text": "re",
+      "createdAt": "2026-11-25T09:58",
+      "id": 20
     }
   ]
 }

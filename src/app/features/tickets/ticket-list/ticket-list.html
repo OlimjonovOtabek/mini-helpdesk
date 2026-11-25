@@ -43,11 +43,7 @@
           <td><app-priority-badge [priority]="ticket.priority" /></td>
           <td>{{ ticket.category }}</td>
           <td>
-            @if (ticket.assigneeId === null) {
-            <span class="unassigned">Biriktirilmagan</span>
-            } @else {
-            {{ assigneeName(ticket.assigneeId) }}
-            }
+            {{ticket.assigneeId | userName: users()}}
           </td>
           <td 
           class="date-cell" 
