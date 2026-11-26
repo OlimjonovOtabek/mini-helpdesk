@@ -47,3 +47,145 @@ Mentor ertangi daily'da shu fayldan savol beradi.
 ## Yozuvlar
 
 <!-- Yangi kunni shu qatordan keyin qoʻshing -->
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-19
+
+### Oʻrgandim
+
+- `Reactive Form` Angular/Forms дан импорт килинади. inject оркали FormBuilder чакирамиз. FormBuilder бизга форма яратишда йордам беради, у оркали FormGroup яратирилади. FormGroup   - ичида форманинг полялари жойлашган яний FormControl. 
+- FormControl html даги  input га богланади formControlName оркали, энди у input ни TS оркали бошкарса болади
+- `nonNullable`: TypeScript даражасида input string | null, nonNullable input қийматини null беришга йўл қўймайд ва reset() чақирилганда input бошланғич қийматига қайтаради.
+- `markAllAsTouched` input ларни touched килиб кояди. Уни йордамида валидация хатоликларини user корсатаоламиз 
+- `signal` Angularg га оз хакида ма'лумот беради
+- `set` signal ни ма'лумотини озгартуриш учун ишлатиладиган метод
+- `update` signal ни ески (signal озини) ма'лумотини асосида озгартуриш учун ишлатиладиган метод
+- `computed` бошка signal асосида оз кийматини чикаради
+- `effect` качен ишлатинилади, качонки signal озгаргандан сонг биз TS тарапта кандайдир иш килмокчи булсак
+![alt text](image.png)
+
+### Loyihada
+
+- 
+- 
+
+### Muammo va yechim
+
+- 
+- 
+
+### Savol
+
+- 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-20
+### Oʻrgandim
+
+- `signal` Angularg га оз хакида ма'лумот беради
+- `set` signal ни ма'лумотини озгартуриш учун ишлатиладиган метод
+- `update` signal ни ески (signal озини) ма'лумотини асосида озгартуриш учун ишлатиладиган метод
+- `computed` бошка signal асосида оз кийматини чикаради
+- `effect` качен ишлатинилади, качонки signal озгаргандан сонг биз TS тарапта кандайдир иш килмокчи булсак
+![alt text](image.png)
+
+### Loyihada
+
+- Users get() запрос йордамида база дан олиб келдим ва уларни формани ичида селектга жойлаштирдим 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-23
+
+### Oʻrgandim
+
+- `getRawValue- формани ичидаги кийматларни олиб келади очирилга болса хам (disabled)`
+
+### Loyihada
+
+- Формани comments га POST метод оркали юбордим
+- comments get() запрос йордамида база дан олиб келдим ва уларни формани тепа кисмига жойлаштирдим
+- refactor: ger-all-users-funcrion  
+Эски холат:
+getAll(): Observable<HttpResponse<User[]>> {
+    return this.http.get<User[]>(this.baseUrl,{
+     observe: 'response'
+    });
+  }
+Озгаргани:
+getAll() {
+    return this.http.get<User[]>(this.baseUrl);
+  }
+- ![alt text](image-1.png)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-24
+
+### Oʻrgandim
+- pipe ма'лумотни бизга керакли кориншда корсататиш учун хизмат килади
+
+### Muammo va yechim
+- Sana formatlash kodi takrorlanib ketgan: ticket-list.tsda formatCreatedAt va formatUpdatedAt funksiyalari bir xil.
+Murojaat sahifasida esa sana umuman formatlanmagan, 2026-10-03T04:55:00Z ko'rinishida chiqyapti.
+Mas'ul xodim ismi ham shablonda metod chaqirib olinyapti.
+TS:
+protected formatCreatedAt(ticket: Ticket): string {
+    const date = new Date(ticket.createdAt);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+  }
+  protected formatUpdatedAt(ticket: Ticket): string {
+    const date = new Date(ticket.updatedAt);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+  }
+  Html:
+      <td 
+          class="date-cell" 
+          pTooltip="{{ticket.createdAt | date:'dd.MM.yyyy'}}" 
+          tooltipPosition="top">{{
+            ticket.createdAt | timeAgo}} 
+      </td>
+      <td 
+          class="date-cell" 
+          pTooltip="{{ticket.createdAt | date:'dd.MM.yyyy'}}" 
+          tooltipPosition="top">
+          {{ticket.updatedAt | timeAgo}}
+       </td>
+
+
+### Loyihada
+
+- PIPE time-ago (shares/pipe/time-ago-pipe.ts) яратилди ва вазифада берилган жойларда ишлатилди 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2026-11-25
+
+### Oʻrgandim
+- Pure va impure pipe farq. Pipe стандарт холатда pure. Pure ни impure дан фарки Angular бирчи бор ма'лумотни текширганда (Angular Change Detection оркали текширади) у transform() чакиради ва олинган кийматни саклаб коядию. Кеинги Angular текширувида берилган ма'думот озгартирилмаган булса Angular кайта яна transform() чакирмайди, саклаб колган малумотни беради.
+Impure да (pure:false) Angular хар текширувида transform() чакиради, хар сафар pipe ишга тушади озгаручи озгармаган булса хам
+
+### Muammo va yechim
+- Ism userName pipe orqali olinadi (ticket.assigneeId | userName: users()); shablonda assigneeName() chaqiruvi qolmaydi. Mas'ul yo'q bo'lsa "Biriktirilmagan" chiqadi.
+<td>
+     @if (ticket.assigneeId === null) {
+    <span class="unassigned">Biriktirilmagan</span>
+    } @else {
+    {{ assigneeName(ticket.assigneeId) }}
+    } 
+</td>
+
+- yechim:
+ {{ticket.assigneeId | userName: users()}}
