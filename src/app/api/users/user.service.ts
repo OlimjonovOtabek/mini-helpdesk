@@ -24,7 +24,7 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl);
   }
 
-  createComment(data:Omit<Comment,'id'>) { 
+  createComment(data:Omit<Comment,'id'>):Observable<Comment> { 
     return this.http.post<Comment>(this.commentsUrl,data)
   }
 

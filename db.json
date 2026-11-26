@@ -376,30 +376,6 @@
       "assigneeId": null,
       "createdAt": "2026-11-06T07:27:00Z",
       "updatedAt": "2026-11-06T07:27:00Z"
-    },
-    {
-      "id": 28,
-      "title": "Direktor kompyuteri yoqilmayapti",
-      "description": "Quvvat tugmasi bosilganda hech narsa boʻlmayapti, chiroqlar ham yonmaydi. Soat 14:00 da taqdimot bor.",
-      "status": "new",
-      "priority": "urgent",
-      "category": "Kompyuter",
-      "requesterId": 5,
-      "assigneeId": null,
-      "createdAt": "2026-11-06T13:05:00Z",
-      "updatedAt": "2026-11-06T13:05:00Z"
-    },
-    {
-      "id": 29,
-      "title": "Printer uchun A3 qogʻoz kerak",
-      "description": "Chizmalarni chop etish uchun A3 formatdagi qogʻoz tugab qoldi.",
-      "status": "new",
-      "priority": "low",
-      "category": "Printer",
-      "requesterId": 4,
-      "assigneeId": null,
-      "createdAt": "2026-11-07T08:50:00Z",
-      "updatedAt": "2026-11-07T08:50:00Z"
     }
   ],
   "comments": [
@@ -488,60 +464,18 @@
       "createdAt": "2026-11-04T09:14:00Z"
     },
     {
-      "ticketId": 29,
-      "authorId": 1,
-      "text": "s",
-      "createdAt": "2026-11-23",
-      "id": 13
-    },
-    {
-      "ticketId": 29,
-      "authorId": 1,
-      "text": "Raxmat",
-      "createdAt": "2026-11-23",
-      "id": 14
-    },
-    {
-      "ticketId": 29,
-      "authorId": 5,
-      "text": "Haliham ishlavadi",
-      "createdAt": "2026-11-23",
-      "id": 15
-    },
-    {
-      "ticketId": 29,
-      "authorId": 1,
-      "text": "Zor",
-      "createdAt": "2026-11-23T18:33",
-      "id": 16
-    },
-    {
-      "ticketId": 29,
-      "authorId": 3,
-      "text": "Ishladi",
-      "createdAt": "2026-11-23T18:53",
-      "id": 17
-    },
-    {
-      "ticketId": 29,
-      "authorId": 3,
-      "text": "zor zor",
-      "createdAt": "2026-11-24T15:49",
-      "id": 18
-    },
-    {
-      "ticketId": 29,
-      "authorId": 4,
-      "text": "a",
-      "createdAt": "2026-11-24T15:51",
-      "id": 19
-    },
-    {
       "ticketId": 24,
       "authorId": 1,
       "text": "re",
       "createdAt": "2026-11-25T09:58",
       "id": 20
+    },
+    {
+      "ticketId": 25,
+      "authorId": 2,
+      "text": "оол",
+      "createdAt": "2026-11-12T20:43",
+      "id": 21
     }
   ]
 }

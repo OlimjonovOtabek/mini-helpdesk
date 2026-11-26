@@ -15,13 +15,15 @@ import { DatePipe, NgStyle } from '@angular/common';
 import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
 import { TooltipModule } from 'primeng/tooltip';
 import { UserNamePipe } from '../../../shared/pipe/user-name-pipe';
+import { Notification } from '../../../core/notification/notification';
+import { ToastModule } from 'primeng/toast'
 
 interface TicketDetailComment extends Comment {
   authorName?: string;
 }
 
 @Component({
-  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule, TooltipModule, DatePipe, TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle,UserNamePipe],
+  imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule, TooltipModule, DatePipe, TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle, UserNamePipe, ToastModule],
   selector: 'app-ticket-detail',
   styleUrl: './ticket-detail.scss',
   templateUrl: './ticket-detail.html',
@@ -32,6 +34,7 @@ export class TicketDetail {
   private ticketsService = inject(TicketsService)
   private userService = inject(UserService)
   private commentsService = inject(CommentsService)
+  private notification = inject(Notification)
 
   ticket = signal<Ticket | null>(null)
   users = signal<User[]>([]);
@@ -67,7 +70,12 @@ export class TicketDetail {
       next: (data => {
         this.comments.update(comments => [...comments, data])
         this.form.reset();
-      })
+        this.notification.success('Yuborildi')
+      }),
+      error: (err: HttpErrorResponse) => {
+        this.notification.error("Yuborib bo'lmad")
+        console.log(err);
+      }
     })
   }
   /** */
@@ -128,8 +136,8 @@ export class TicketDetail {
       }
     })
   }
-  protected assigneeName(assigneeId: number): string { 
-    console.log(1) 
+  protected assigneeName(assigneeId: number): string {
+    console.log(1)
     return this.users().find((user) => user.id === assigneeId)?.name ?? '';
   }
 }

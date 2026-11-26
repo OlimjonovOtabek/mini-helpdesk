@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
+import { Component, computed, DestroyRef, EventEmitter, inject, Output, output, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MessageService } from 'primeng/api';
 import { Button } from 'primeng/button';
@@ -16,6 +16,7 @@ import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { TimeAgoPipe } from '../../../shared/pipe/time-ago-pipe';
 import { UserNamePipe } from '../../../shared/pipe/user-name-pipe';
+import { Notification } from '../../../core/notification/notification';
 
 @Component({
   imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, TooltipModule, RouterLink,DatePipe,TimeAgoPipe,UserNamePipe],
@@ -29,6 +30,8 @@ export class TicketList {
   private readonly ticketsService = inject(TicketsService);
   private readonly messageService = inject(MessageService);
   private readonly destroyRef = inject(DestroyRef);
+  private notification =inject(Notification)
+
 
   protected readonly tickets = signal<Ticket[]>([]);
   protected readonly users = signal<User[]>([]);
@@ -132,11 +135,8 @@ export class TicketList {
       .delete(ticket.id)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Murojaat oʻchirildi',
-          life: 3000,
-        });
+        this.notification.success("Murojaat oʻchirildi")
       });
   }
 }
+// 

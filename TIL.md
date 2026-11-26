@@ -189,3 +189,26 @@ Impure да (pure:false) Angular хар текширувида transform() ча�
 
 - yechim:
  {{ticket.assigneeId | userName: users()}}
+
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ ### 2026-11-26
+
+ ### Oʻrgandim
+ - providedIn: 'root' bilan app.config.tsdagi provider o'rtasidagi Service ornatish farqi.
+
+ ### Muammo 
+ - Хар бир компонент PrimeNG MessageService алохида чакирияпти
+  this.messageService.add({
+          severity: 'success',
+          summary: 'Murojaat oʻchirildi',
+          life: 3000,
+        });
+
+## yechim
+this.ticketsService
+  .delete(ticket.id)
+  .pipe(takeUntilDestroyed(this.destroyRef))
+  .subscribe(() => {
+  this.notification.success("Murojaat oʻchirildi")
+      });
