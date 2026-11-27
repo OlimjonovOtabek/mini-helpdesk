@@ -20,6 +20,7 @@ import { Notification } from '../../../core/notification/notification';
 
 @Component({
   imports: [Button, ConfirmDialog, PriorityBadge, ProgressBar, StatusBadge, TableModule, Tooltip, TooltipModule, RouterLink,DatePipe,TimeAgoPipe,UserNamePipe],
+  providers: [TicketsService],
   selector: 'app-ticket-list',
   styleUrl: './ticket-list.scss',
   templateUrl: './ticket-list.html',

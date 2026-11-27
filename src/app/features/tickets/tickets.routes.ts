@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { TicketDetail } from './ticket-detail/ticket-detail';
 import { NotFound } from '../../core/not-found/not-found';
+import { API_URL } from '../../core/api-url';
 
 
 export const ticketsRoutes: Routes = [

@@ -25,6 +25,7 @@ interface TicketDetailComment extends Comment {
 @Component({
   imports: [StatusBadge, PriorityBadge, ProgressSpinnerModule, InputTextModule, TooltipModule, DatePipe, TimeAgoPipe, RouterLink, ReactiveFormsModule, NgStyle, UserNamePipe, ToastModule],
   selector: 'app-ticket-detail',
+  
   styleUrl: './ticket-detail.scss',
   templateUrl: './ticket-detail.html',
 })
